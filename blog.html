@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <!-- Daisy ui and Tailwind Css -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google font inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font style -->
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mx-5">
+      <h1 class="text-6xl text-center mt-4 lg:mt-12">Questions And Answers</h1>
+      <p class="my-10 text-4xl text-center">
+        Discuss the scope of var, let, and const
+      </p>
+      <p class="text-3xl bg-amber-200 p-2">var</p>
+      <p class="text-xl p-5">
+        variable declared with 'var' is a functional scope. It can be access
+        within function. We can reassign it's value. It can be updated. It can
+        be declared without initializing but the default value will be
+        "undefined". 'var' declaration is not a block-scoped. So it can lead to
+        unexpected behavior within blocks like if statements or loops. Here
+        hoisting done, with initializing as 'default' value
+      </p>
+      <p class="text-3xl bg-amber-200 p-2">let</p>
+      <p class="text-xl p-5"></p>
+      <p class="text-3xl bg-amber-200 p-2">const</p>
+      <p class="text-xl p-5"></p>
+    </div>
+  </body>
+</html>

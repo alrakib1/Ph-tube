@@ -36,7 +36,7 @@
           <a class="btn text-sm font-medium md:text-lg">Sort by view</a>
         </div>
         <div class="navbar-end">
-          <a class="btn bg-red-600 text-white p-3">Blog</a>
+          <a onclick="goToBlog()" class="btn bg-red-600 text-white p-3">Blog</a>
         </div>
       </div>
     </nav>
@@ -45,19 +45,23 @@
       <!-- tabs section -->
       <section>
         <div class="tab-container w-full">
-          <div
+            <div
             class="tabs p-5 m-auto  text-center flex justify-center gap-5"
             id="tab-container"
-          ></div>
+          >
+            </div>
         </div>
       </section>
       <!-- card section -->
-      <section class="container mx-auto">
+      <section class="container mx-auto mt-6">
         <div
           id="card-container"
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-        ></div>
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative"
+        >
+      </div> 
       </section>
+      <div id="error-container" class=" flex justify-center items-center gap-5 my-10 ">  
+      </div>
     </main>
     <!-- scripts -->
     <script src="./js/index.js"></script>
