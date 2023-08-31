@@ -16,27 +16,18 @@ const handleCategory = async()=>{
 }
 
 const handleLoadVideo = async(categoryId) =>{
-    console.log(categoryId)
+    console.log(categoryId);
+
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
     const data =await response.json();
-    console.log(data.data);
-
+   
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
 
+    
+
     data.data.forEach((video)=>{
         const div = document.createElement('div');
-
-        const blueTick = document.getElementById('blue-tick');
-        const tickMark = video.authors[0].verified;
-        // if(tickMark === false || tickMark === ''){
-        //     blueTick.classList.add = 'hidden';
-        // }else{
-        //     blueTick.classList.remove = 'hidden';
-        // }
-
-        
-        
         div.innerHTML=`
         <div class="card w-96 bg-base-100 shadow-xl">
             <figure>
@@ -56,7 +47,7 @@ const handleLoadVideo = async(categoryId) =>{
                   <div>
               <div class="flex gap-3">
               <p>${video.authors[0].profile_name}</p>
-              <image src="./images/tick.png" class="h-1/2 " id="blue-tick"/>
+              <img src="${video.authors[0].verified ? './images/tick.png' : '' }"/>
               </div>
               <p>${video.others.views} views</p>
               </div>
