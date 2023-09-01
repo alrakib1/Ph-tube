@@ -28,7 +28,10 @@ const handleLoadVideo = async (categoryId) => {
 
   const errorContainer = document.getElementById("error-container");
   errorContainer.innerHTML = "";
+  const container = document.getElementById('error-container');
   if (array.length === 0) {
+    container.classList.add("flex");
+    container.classList.remove("hidden");
     const div = document.createElement("div");
     div.innerHTML = `
             <div>
@@ -164,3 +167,9 @@ const goToBlog = () => {
 
 handleCategory();
 handleLoadVideo("1000");
+
+document.getElementById('short').addEventListener('click',function(){
+  const container = document.getElementById('error-container');
+  container.classList.remove("flex");
+  container.classList.add("hidden");
+})
