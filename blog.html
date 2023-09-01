@@ -28,23 +28,62 @@
   </head>
   <body>
     <div class="mx-5">
-      <h1 class="text-6xl text-center mt-4 lg:mt-12">Questions And Answers</h1>
-      <p class="my-10 text-4xl text-center">
+      <h1 class="text-6xl text-center mt-4 lg:mt-12 font-bold">Questions And Answers</h1>
+      <p class="my-10 text-4xl text-center font-bold">
         Discuss the scope of var, let, and const
       </p>
       <p class="text-3xl bg-amber-200 p-2">var</p>
       <p class="text-xl p-5">
         variable declared with 'var' is a functional scope. It can be access
-        within function. We can reassign it's value. It can be updated. It can
-        be declared without initializing but the default value will be
-        "undefined". 'var' declaration is not a block-scoped. So it can lead to
-        unexpected behavior within blocks like if statements or loops. Here
-        hoisting done, with initializing as 'default' value
+        within function. We can reassign it's value. We can update or change it
+        based on necessary. It can be declared without initializing but the
+        default value will be
+        <span class="font-bold">"undefined"</span>. 'var' declaration is not a
+        block-scoped. So it can lead to unexpected behavior within blocks like
+        if statements or loops.
       </p>
       <p class="text-3xl bg-amber-200 p-2">let</p>
-      <p class="text-xl p-5">let is a block-scoped variable. We declare it by 'let'. It can not reassign values. </p>
+      <p class="text-xl p-5">
+        let is a block-scoped variable. We declare it by 'let'. We can not
+        reassign it's values. Though we can not reassign the value but we can
+        update it's value. It optionally initialize itself to a value. If you
+        want to access it before declaring then it will throw
+        <span class="font-bold">"Reference Error"</span>. It's only available
+        within the block it was declared.
+      </p>
       <p class="text-3xl bg-amber-200 p-2">const</p>
-      <p class="text-xl p-5"></p>
+      <p class="text-xl p-5">
+        const is also a block-scoped variable like 'let'. We declare it by
+        'const'. We can not reassign it's values. If you want to access it
+        before declaring then it will throw
+        <span class="font-bold">"Reference Error"</span>. It's only available
+        within the block it was declared.
+      </p>
+      <div>
+        <p class="my-10 text-4xl text-center font-bold">
+          Discuss Null and Undefined
+        </p>
+        <p class="text-3xl bg-amber-200 p-2">Null</p>
+        <p class="text-xl p-5">We can initialize variables or object properties to 'null' if they are yet to be assigned a value. If we don't get valid result or result is absent from a function then it will give Null. Null can be used for error handling. <span class="font-bold">"Null is an Object in JavaScript"</span>. A null value in JavaScript is used for referring absence of any object value and if any function or variable returns null, then we can infer that the object could not be created.</p>
+        <p class="text-3xl bg-amber-200 p-2">Undefined</p>
+        <p class="text-xl p-5"><span class="font-bold">There's eight ways you can get undefined</span>- <br>
+          (1) Variable that is not initialized will give undefined. <br>
+          (2) Function with no return. <br>
+          (3) Parameter that is not passed on a function will be undefine. <br>
+          (4) If return has nothing on the right side will return undefined. <br>
+          (5) Property that does not exists on an object will give undefined . <br>
+          (6) Accessing array elements outside of index range. <br>
+          (7) Deleting an element inside an array. <br>
+          (8) Set a value directly to undefined. <br>
+          
+        </p>
+      </div>
+      <div>
+        <p class="my-10 text-4xl text-center font-bold  bg-amber-200 p-5">
+          What do you mean by REST API?
+        </p>
+        <p class="text-xl p-5">Api means Application Programming Interface. It uses HTTP requests to access and use data. That data can be used to GET, PUT, POST and DELETE data types, which refers to the reading, updating, creating and deleting of operations concerning resources. REST API is also refers to RESTful web services and It's used for web development purpose. It can be created with programming language such as JavaScript or Python.</p>
+      </div>
     </div>
   </body>
 </html>
