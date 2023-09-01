@@ -55,7 +55,7 @@ const handleLoadVideo = async (categoryId) => {
 
       const div = document.createElement("div");
       div.innerHTML = `
-        <div class="card w-86 bg-base-100 shadow-xl">
+        <div class="card bg-base-100 shadow-xl">
             <figure>
               <img src=${video.thumbnail} class="w-full h-[220px]" alt="" />
             </figure>
@@ -125,7 +125,7 @@ const sortByView = async () => {
 
     const div = document.createElement("div");
     div.innerHTML = `
-      <div class="card w-86 bg-base-100 shadow-xl">
+      <div class="card bg-base-100 shadow-xl">
           <figure>
             <img src=${video.thumbnail} class="w-full h-[220px]" alt="" />
           </figure>
