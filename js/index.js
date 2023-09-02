@@ -63,9 +63,11 @@ const handleLoadVideo = async (categoryId) => {
             <figure>
               <img src=${video.thumbnail} class="w-full h-[220px]" alt="" />
             </figure>
-            <p class="text-right bg-[#171717] p-1  text-white absolute right-4 bottom-36">${
-              video?.others?.posted_date ? timer : ""
-            }</p>
+            ${
+              video?.others?.posted_date
+                ? `<p class="text-right bg-[#171717] p-1  text-white absolute right-4 bottom-36">${timer}</p>`
+                : '' 
+            }
             <div class="card-body">
               <div class="flex gap-3">
                 <div class="avatar">
@@ -141,9 +143,11 @@ const sortByView = async () => {
           <figure>
             <img src=${video.thumbnail} class="w-full h-[220px]" alt="" />
           </figure>
-          <p class="text-right bg-[#171717] p-1  text-white absolute right-4 bottom-36">${
-            video?.others?.posted_date ? timer : ""
-          }</p>
+          ${
+            video?.others?.posted_date
+              ? `<p class="text-right bg-[#171717] p-1  text-white absolute right-4 bottom-36">${timer}</p>`
+              : '' 
+          }
           <div class="card-body">
             <div class="flex gap-3">
               <div class="avatar">
