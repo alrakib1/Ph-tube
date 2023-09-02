@@ -1,3 +1,5 @@
+let id = 1000;
+
 const handleCategory = async () => {
   const response = await fetch(
     "https://openapi.programming-hero.com/api/videos/categories"
@@ -7,15 +9,17 @@ const handleCategory = async () => {
 
   const tabContainer = document.getElementById("tab-container");
   categories.forEach((categoryName) => {
-    const div = document.createElement("div");
+    const div = document.createElement("div"); 
     div.innerHTML = `
         <a onclick="handleLoadVideo('${categoryName?.category_id}')" class="tab bg-gray-300">${categoryName?.category}</a> 
-        `;
+        `;   
     tabContainer.appendChild(div);
   });
 };
 
 const handleLoadVideo = async (categoryId) => {
+  id = categoryId;
+
   const response = await fetch(
     `https://openapi.programming-hero.com/api/videos/category/${categoryId}`
   );
@@ -26,12 +30,12 @@ const handleLoadVideo = async (categoryId) => {
 
   const array = data.data;
 
-  const errorContainer = document.getElementById("error-container");
-  errorContainer.innerHTML = "";
-  const container = document.getElementById('error-container');
+  const Container = document.getElementById("error-container");
+  Container.innerHTML = "";
+  
   if (array.length === 0) {
-    container.classList.add("flex");
-    container.classList.remove("hidden");
+    Container.classList.add("flex");
+    Container.classList.remove("hidden");
     const div = document.createElement("div");
     div.innerHTML = `
             <div>
@@ -39,7 +43,7 @@ const handleLoadVideo = async (categoryId) => {
             <p class="text-2xl lg:text-4xl text-center">Oops!! Sorry, There is no <br/> content here</p> 
             </div>   
         `;
-    errorContainer.appendChild(div);
+    Container.appendChild(div);
   } else {
     array.forEach((video) => {
       // time calculation
@@ -95,7 +99,7 @@ const handleLoadVideo = async (categoryId) => {
 
 const sortByView = async () => {
   const response = await fetch(
-    `https://openapi.programming-hero.com/api/videos/category/1000`
+    `https://openapi.programming-hero.com/api/videos/category/${id}`
   );
   const data = await response.json();
 
@@ -106,11 +110,19 @@ const sortByView = async () => {
 
   const arr = array.sort(function (a, b) {
     return (
-      parseFloat(b.others.views.slice(0, 3)) -
-      parseFloat(a.others.views.slice(0, 3))
+      parseFloat(b.others.views) -
+      parseFloat(a.others.views)
     );
   });
 
+  if(arr.length === 0){
+    container.classList.add("flex");
+    container.classList.remove("hidden");
+  }else{
+  const container = document.getElementById('error-container');
+  container.classList.remove("flex");
+  container.classList.add("hidden");
+  
   arr.forEach((video) => {
     // time calculation
     const videoTimer = video.others.posted_date;
@@ -159,6 +171,7 @@ const sortByView = async () => {
       `;
     cardContainer.appendChild(div);
   });
+  }
 };
 
 const goToBlog = () => {
@@ -166,10 +179,4 @@ const goToBlog = () => {
 };
 
 handleCategory();
-handleLoadVideo("1000");
-
-document.getElementById('short').addEventListener('click',function(){
-  const container = document.getElementById('error-container');
-  container.classList.remove("flex");
-  container.classList.add("hidden");
-})
+handleLoadVideo(id);
